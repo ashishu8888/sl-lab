@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            String conversion
+        </title>
+        <h3>
+            Question 5
+        </h3>
+    </head>
+    <body>
+        <div>
+            <p>
+                Enter the String here: 
+                <input type="text" id = "s">
+            </p>
+        </div>
+        <div>
+            <input type="button" value="Enter" onclick="convert()" id = "enter">
+        </div>
+        <br>
+
+        <div>
+          
+                Output : <span id = "result">?</span>
+            
+        </div>
+
+        <script>
+            function convert(){
+
+                strgg = document.getElementById("s").value
+                strg = strgg.split('')
+
+                for(i =0;i<strg.length;i++)
+                {
+                    switch(strg[i])
+                    {
+                        case 'z' : 
+                        strg[i] = 'a'
+                        break;
+
+                        case 'Z' :
+                            strg[i] = 'A'
+                            break;
+
+                        case " ":
+                            break;
+
+                            default :
+                            strg[i] = String.fromCharCode(1+strg[i].charCodeAt());
+
+                    }
+
+                    switch(strg[i])
+                    {
+                        case 'a' :
+                        
+                        case 'e' :
+                        
+                        case 'i' :
+                        
+                        case 'o' :
+                        
+                        case 'u' :
+                            strg[i] = strg[i].toUpperCase();
+                            break;
+                    }
+
+
+                }
+                strg = strg.join(' ');
+                document.getElementById("result").innerHTML = strg
+               // alert(strg);
+
+            }
+        </script>
+    </body>
+</html>
