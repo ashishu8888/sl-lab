@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing</title>
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="q2.css"
+    ></link>
+</head>
+
+<h3
+    align="center"
+    style="font-size: 30px; font-family: sans-serif;"
+>Total Billing</h3>
+
+<body>
+    <p>
+        Item Name :
+
+        <input
+            type="text"
+            id="name"
+        ></input>
+    </p>
+
+    <br>
+    <br>
+
+    <p>
+        Item Price :
+
+        <input
+            type="number"
+            id="price"
+        ></input>
+    </p>
+
+    <br>
+    <br>
+
+    <p>
+        Item Quantity :
+
+        <input
+            type="number"
+            id="qty"
+        ></input>
+
+        <br>
+        <br>
+    </p>
+
+    <input
+        type="button"
+        onclick="calculate()"
+        value="submit"
+    ></input>
+
+    <br>
+    <br>
+
+    <p>
+        Total price of the customer is:
+
+        <span id="result">0.00</span>
+    </p>
+
+    <p>
+        <input
+            type="button"
+            onclick="paid()"
+            value="pay"
+        ></input>
+
+        <br>
+        <br>
+    </p>
+
+    <script>
+        function calculate(){
+
+                    x  = document.getElementById("price").value
+                    y = document.getElementById("qty").value
+
+                    res = x*y
+
+                    document.getElementById("result").innerHTML = res
+
+                }
+
+                function paid(){
+                    alert("Paid"); 
+                }
+    </script>
+</body>
+</html>
