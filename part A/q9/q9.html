@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>letter surround</title>
+
+    <h3>Question 9</h3>
+</head>
+
+<body>
+    <div>
+        <p>
+            Enter a String here :
+
+            <input
+                type="text"
+                id="s"
+            ></input>
+        </p>
+    </div>
+
+    <div>
+        <input
+            type="button"
+            onclick="submit()"
+            value="submit"
+        ></input>
+    </div>
+
+    <br>
+
+    <div>
+        result :
+
+        <span id="result">?</span>
+    </div>
+
+    <script>
+        function submit(){
+            x = document.getElementById("s").value
+            if(x[0]>='a' || x.length == 1 || x.length == 0)
+            {
+                document.getElementById("result").innerHTML = "Testcase not passed!"
+                alert("Invalid input")
+                return ;
+            }
+            else if(x[x.length-1] >='a')
+            {
+                document.getElementById("result").innerHTML = "Testcase not passed!"
+                return;
+            }
+            let ans = true;
+            for(var i=1;i<x.length-1;i++)
+            {
+                if((x[i].toUpperCase()!=x[i].toLowerCase()) && (x[i-1] != '+' || x[i+1] != '+'))
+                {
+                    ans = false
+                }
+            }
+
+            if(ans)
+            {
+                document.getElementById("result").innerHTML = "Testcase passed!"
+            }
+            else{
+                document.getElementById("result").innerHTML = "Testcase not passed!"
+            }
+
+        }
+    </script>
+</body>
+</html>

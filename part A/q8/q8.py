@@ -1,6 +1,5 @@
 from functools import reduce
 
-
 myList = []
 
 print("Enter any 6 numbers")
