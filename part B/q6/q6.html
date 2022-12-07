@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>search frequency</title>
+</head>
+
+<body>
+    <p>
+        <h3>Question 6</h3>
+    </p>
+
+    <div>
+        <p>
+            Enter a string here : &nbsp;
+
+            <textarea
+                rows="3"
+                cols="3"
+                id="a"
+            ></textarea>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            Enter a string to search here : &nbsp;
+
+            <input
+                type="text"
+                id="b"
+            ></input>
+        </p>
+    </div>
+
+    <input
+        type="button"
+        value="submit"
+        onclick="exe()"
+    ></input>
+
+    <p>
+        Entered text is:
+
+        <span id="c"></span>
+    </p>
+
+    <p>
+        No of digits are:&nbsp;
+
+        <span id="d"></span>
+    </p>
+
+    <p>
+        No of white space characters are:&nbsp;
+
+        <span id="e"></span>
+    </p>
+
+    <p>
+        No of alphabets are:&nbsp;
+
+        <span id="f"></span>
+    </p>
+
+    <p>
+        No of occurence of the given string is:&nbsp;
+
+        <span id="g"></span>
+    </p>
+
+    <p>
+        the position of occurrence of the search string in the given string: &nbsp;
+
+        <span id="h"></span>
+    </p>
+
+    <script>
+        function exe()
+        {
+            x = document.getElementById("a").value;
+            y = document.getElementById("b").value;
+
+            document.getElementById("c").innerHTML = x;
+
+            c = 0
+            d = 0
+            e = 0
+            f = 0
+            q = ""
+            for (var i = 0; i < x.length; i++) {
+                if (x[i] >= '0' && x[i] <= '9')
+                    c++;
+                if (x[i] == " ")
+                    d++;
+                if (x[i].toUpperCase() != x[i].toLowerCase())
+                    e++;
+            }
+
+            a = x.split(" ")
+
+            for (var i = 0; i < a.length; i++) {
+                if (a[i] == y) {
+                    f++;
+                }
+            }
+
+            m = x.search(y)
+
+            if (m == -1) {
+                q = "It is not found!"
+            }
+            else {
+                q = `yes its there at ${m}`
+            }
+
+            document.getElementById("d").innerHTML = c;
+            document.getElementById("e").innerHTML = d;
+            document.getElementById("f").innerHTML = e;
+            document.getElementById("g").innerHTML = f;
+            document.getElementById("h").innerHTML = q;
+        }
+    </script>
+</body>
+</html>
