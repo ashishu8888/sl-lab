@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+        rel="stylesheet"
+        href="style.css"
+    ></link>
+
+    <title>Bakery</title>
+</head>
+
+<body>
+    <h2>Bakery</h2>
+
+    <div>
+        <p>
+            1. Cake &nbsp;&nbsp;&nbsp;
+
+            <br>
+            price : ₹500 &nbsp;
+
+            <input
+                type="number"
+                id="cake"
+            ></input>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            2. Bread &nbsp;&nbsp;&nbsp;
+
+            <br>
+            price : ₹70 &nbsp;
+
+            <input
+                type="number"
+                id="bread"
+            ></input>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            3. pastry &nbsp;&nbsp;&nbsp;
+
+            <br>
+            price : ₹80 &nbsp;
+
+            <input
+                type="number"
+                id="pastry"
+            ></input>
+        </p>
+    </div>
+
+    <div>
+        <p>
+            4. Hot Dog
+
+            <br>
+            price : ₹40 &nbsp;
+
+            <input
+                type="number"
+                id="hot_dog"
+            ></input>
+        </p>
+    </div>
+
+    <div>
+        <input
+            value="Generate Bill"
+            onclick="generate()"
+            type="button"
+        ></input>
+    </div>
+
+    <script>
+        var price = new Map([["cake",500 ], ["bread",70],["pastry",80],["hot_dog",40]])
+
+        function generate(){
+            cake = document.getElementById("cake").value;
+            bread = document.getElementById("bread").value;
+            pastry = document.getElementById("pastry").value;
+            hot_dog = document.getElementById("hot_dog").value;
+
+            total = price.get("cake")*cake + price.get("bread") * bread + price.get("pastry") * pastry + price.get("hot_dog") * hot_dog;
+
+            alert(`Generated Bill : ${total}`)
+        }
+    </script>
+</body>
+</html>

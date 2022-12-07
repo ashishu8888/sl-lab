@@ -1,0 +1,15 @@
+p{
+    color: gray;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+h2{
+    color: black;
+        font-size: 40px;
+        font-family: sans-serif;
+}
+input{
+    color: rgb(219, 38, 38);
+        font-size: 20px;
+        font-family: sans-serif;
+}
